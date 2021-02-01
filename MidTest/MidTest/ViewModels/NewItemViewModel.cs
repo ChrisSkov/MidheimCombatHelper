@@ -9,8 +9,8 @@ namespace MidTest.ViewModels
 {
     public class NewItemViewModel : BaseViewModel
     {
-        private string text;
-        private string description;
+        private string navn;
+        private string energi;
         private string tempo;
 
         public NewItemViewModel()
@@ -23,24 +23,24 @@ namespace MidTest.ViewModels
 
         private bool ValidateSave()
         {
-            return !String.IsNullOrWhiteSpace(text)
-                && !String.IsNullOrWhiteSpace(description);
+            return !String.IsNullOrWhiteSpace(navn)
+                && !String.IsNullOrWhiteSpace(energi);
         }
 
-        public string Text
+        public string Navn
         {
-            get => text;
-            set => SetProperty(ref text, value);
+            get => navn;
+            set => SetProperty(ref navn, value);
         }
         public string Tempo
         {
             get => tempo;
             set => SetProperty(ref tempo, value);
         }
-        public string Description
+        public string Energi
         {
-            get => description;
-            set => SetProperty(ref description, value);
+            get => energi;
+            set => SetProperty(ref energi, value);
         }
 
         public Command SaveCommand { get; }
@@ -57,8 +57,8 @@ namespace MidTest.ViewModels
             Item newItem = new Item()
             {
                 Id = Guid.NewGuid().ToString(),
-                Text = Text,
-                Description = Description,
+                Navn = Navn,
+                Energi = Energi,
                 Tempo = Tempo
             };
 

@@ -14,8 +14,8 @@ namespace MidTest.Services
         {
             items = new List<Item>()
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description.", Tempo= "tempo text" },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description.", Tempo= "Tempo text" },
+                new Item { Id = Guid.NewGuid().ToString(), Navn = "First item", Energi="This is an item description.", Tempo= "tempo text" },
+                new Item { Id = Guid.NewGuid().ToString(), Navn = "Second item", Energi="This is an item description.", Tempo= "Tempo text" },
       
             };
         }
