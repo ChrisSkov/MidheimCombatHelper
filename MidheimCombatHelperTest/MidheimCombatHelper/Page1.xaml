@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MidheimCombatHelper.Page1">
+    <StackLayout>
+        <Button Text="Button"></Button>
+        <Label Text="Indtast våben energi og tempo nedenfor."></Label>
+        <Grid HorizontalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"></ColumnDefinition>
+                <ColumnDefinition Width="120"></ColumnDefinition>
+                <ColumnDefinition Width="120"></ColumnDefinition>
+
+            </Grid.ColumnDefinitions>
+            <Entry Placeholder="Navn: " Grid.Column="0"></Entry>
+            <Entry Placeholder="Våben energi:" Keyboard="Numeric" x:Name="wepEnergi" Grid.Column="1"></Entry>
+            <Entry Placeholder="Våben tempo:" Keyboard="Numeric" x:Name="wepTempo" Grid.Column="2"></Entry>
+        </Grid>
+    </StackLayout>
+</ContentPage>
