@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9hCHUDN1dyUbYnSbeBzrELnOXTSwUMawAVCGfwhQwWDunPP9bb1RqMG1yN0H5fRDrNnsVZ16RThnvY2VxuMwSA==",
+  "dgSpecHash": "TPYomyTg1ah6FFNAGwO5bZJGg0J1mWrFhfzYOx/0NQlWonBBdV6mTPifQD9DI+eUXTn10rvUCoG9bVUdvIz30g==",
   "success": true,
-  "projectFilePath": "D:\\MidheimCombatHelperTest\\MidheimCombatHelper.Android\\MidheimCombatHelper.Android.csproj",
+  "projectFilePath": "D:\\MidheimCombatHelper\\MidheimCombatHelperTest\\MidheimCombatHelper.Android\\MidheimCombatHelper.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\stoff\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\stoff\\.nuget\\packages\\xamarin.androidx.activity\\1.1.0.5\\xamarin.androidx.activity.1.1.0.5.nupkg.sha512",

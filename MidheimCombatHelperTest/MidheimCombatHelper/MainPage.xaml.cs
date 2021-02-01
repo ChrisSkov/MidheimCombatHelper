@@ -12,6 +12,9 @@ namespace MidheimCombatHelper
     {
         public int attackCount = 0;
         public int energiCost = 0;
+
+        public int mainHandEnergiCost;
+        public int mainHandTempoCost;
         public MainPage()
         {
             InitializeComponent();
@@ -26,7 +29,7 @@ namespace MidheimCombatHelper
                 DisplayAlert("Ingen regen", "Du har ikke tastet din energi per runde", "OK");
             }
             energiSlider.Value += int.Parse(energiRegen.Text);
-            energiSlider.Value = int.Parse(maxTempo.Text);
+            tempoSlider.Value = int.Parse(maxTempo.Text);
             attackCount = 0;
         }
 
@@ -48,6 +51,11 @@ namespace MidheimCombatHelper
 
         private void MaxTempo_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if(maxTempo.Text == null)
+            {
+                DisplayAlert("Ingen tempo", "Indtast lige dit tempo, bro", "OK");
+
+            }
             tempoSlider.Maximum = int.Parse(maxTempo.Text);
             tempoSlider.Value = int.Parse(maxEnergi.Text);
         }
@@ -56,8 +64,8 @@ namespace MidheimCombatHelper
       
         private void Angreb(object sender, EventArgs e)
         {
-            energiSlider.Value -= int.Parse(wepEnergi.Text) + attackCount;
-            tempoSlider.Value -= int.Parse(wepTempo.Text);
+            energiSlider.Value -= mainHandEnergiCost + attackCount;
+            tempoSlider.Value -= mainHandTempoCost;
             attackCount++;
         }
 
@@ -68,8 +76,8 @@ namespace MidheimCombatHelper
                 DisplayAlert("Ikke nok energi", "Du har ikke nok energi!", "Chill bro");
                 return;
             }
-            energiSlider.Value -= int.Parse(wepEnergi.Text) + attackCount + 1;
-            tempoSlider.Value -= int.Parse(wepTempo.Text);
+            energiSlider.Value -= mainHandEnergiCost + attackCount + 1;
+            tempoSlider.Value -= mainHandTempoCost;
             attackCount++;
 
 
@@ -77,8 +85,8 @@ namespace MidheimCombatHelper
 
         private void DiscAngreb(object sender, EventArgs e)
         {
-            energiSlider.Value -= int.Parse(wepEnergi.Text) + attackCount;
-            tempoSlider.Value -= int.Parse(wepTempo.Text) + 1; ;
+            energiSlider.Value -= mainHandEnergiCost + attackCount;
+            tempoSlider.Value -= mainHandTempoCost + 1; ;
             attackCount++;
         
 
@@ -86,15 +94,16 @@ namespace MidheimCombatHelper
 
         private void BrasendeAngreb(object sender, EventArgs e)
         {
-            energiSlider.Value -= int.Parse(wepEnergi.Text) + attackCount +1;
-            tempoSlider.Value -= int.Parse(wepTempo.Text) +1;
+            energiSlider.Value -= mainHandEnergiCost + attackCount +1;
+            tempoSlider.Value -= mainHandTempoCost + 1;
             attackCount++;
         }
 
         private void DesperatAngreb(object sender, EventArgs e)
         {
-            energiSlider.Value -= int.Parse(wepEnergi.Text) + attackCount;
-            tempoSlider.Value -= int.Parse(wepTempo.Text);
+
+            energiSlider.Value -= mainHandEnergiCost + attackCount;
+            tempoSlider.Value -= mainHandTempoCost;
             attackCount++;
         }
 
@@ -132,6 +141,30 @@ namespace MidheimCombatHelper
         private async void Button_Clicked(object sender, EventArgs e)
         {
            await Navigation.PushAsync(new Page1());
+        }
+
+        private void Næver_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            mainHandEnergiCost = 1;
+            mainHandTempoCost = 1;
+        }
+
+        private void KortVåben_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            mainHandEnergiCost = 1;
+            mainHandTempoCost = 1;
+        }
+
+        private void HåndVåben_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            mainHandEnergiCost = 2;
+            mainHandTempoCost = 2;
+        }
+
+        private void ToHånd_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            mainHandEnergiCost = 3;
+            mainHandTempoCost = 3;
         }
     }
 }

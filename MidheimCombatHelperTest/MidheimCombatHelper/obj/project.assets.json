@@ -540,11 +540,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MidheimCombatHelperTest\\MidheimCombatHelper\\MidheimCombatHelper.csproj",
+      "projectUniqueName": "D:\\MidheimCombatHelper\\MidheimCombatHelperTest\\MidheimCombatHelper\\MidheimCombatHelper.csproj",
       "projectName": "MidheimCombatHelper",
-      "projectPath": "D:\\MidheimCombatHelperTest\\MidheimCombatHelper\\MidheimCombatHelper.csproj",
+      "projectPath": "D:\\MidheimCombatHelper\\MidheimCombatHelperTest\\MidheimCombatHelper\\MidheimCombatHelper.csproj",
       "packagesPath": "C:\\Users\\stoff\\.nuget\\packages\\",
-      "outputPath": "D:\\MidheimCombatHelperTest\\MidheimCombatHelper\\obj\\",
+      "outputPath": "D:\\MidheimCombatHelper\\MidheimCombatHelperTest\\MidheimCombatHelper\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

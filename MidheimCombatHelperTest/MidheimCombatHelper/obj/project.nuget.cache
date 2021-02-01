@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iF5DEdMqkd+cJGtJqIwPbGmhO9xyHgQoeFJfkKwzrltNMt5fY5+mnGwIU6d8xKCTJeofYUA1WwWlr7Ct/aJ13w==",
+  "dgSpecHash": "zzDLkhE2czk9Ii2xiu26Fp0k02iNSU91BLB9JklweN/z/c5eg+KMYuRTysSbKSHZsmRTrwe+eJliboRUybIEIA==",
   "success": true,
-  "projectFilePath": "D:\\MidheimCombatHelperTest\\MidheimCombatHelper\\MidheimCombatHelper.csproj",
+  "projectFilePath": "D:\\MidheimCombatHelper\\MidheimCombatHelperTest\\MidheimCombatHelper\\MidheimCombatHelper.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\stoff\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\stoff\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

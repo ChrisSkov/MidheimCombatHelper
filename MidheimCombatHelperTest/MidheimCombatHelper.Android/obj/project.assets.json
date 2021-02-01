@@ -2115,11 +2115,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MidheimCombatHelperTest\\MidheimCombatHelper.Android\\MidheimCombatHelper.Android.csproj",
+      "projectUniqueName": "D:\\MidheimCombatHelper\\MidheimCombatHelperTest\\MidheimCombatHelper.Android\\MidheimCombatHelper.Android.csproj",
       "projectName": "MidheimCombatHelper.Android",
-      "projectPath": "D:\\MidheimCombatHelperTest\\MidheimCombatHelper.Android\\MidheimCombatHelper.Android.csproj",
+      "projectPath": "D:\\MidheimCombatHelper\\MidheimCombatHelperTest\\MidheimCombatHelper.Android\\MidheimCombatHelper.Android.csproj",
       "packagesPath": "C:\\Users\\stoff\\.nuget\\packages\\",
-      "outputPath": "D:\\MidheimCombatHelperTest\\MidheimCombatHelper.Android\\obj\\",
+      "outputPath": "D:\\MidheimCombatHelper\\MidheimCombatHelperTest\\MidheimCombatHelper.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2140,8 +2140,8 @@
       "frameworks": {
         "monoandroid10.0": {
           "projectReferences": {
-            "D:\\MidheimCombatHelperTest\\MidheimCombatHelper\\MidheimCombatHelper.csproj": {
-              "projectPath": "D:\\MidheimCombatHelperTest\\MidheimCombatHelper\\MidheimCombatHelper.csproj"
+            "D:\\MidheimCombatHelper\\MidheimCombatHelperTest\\MidheimCombatHelper\\MidheimCombatHelper.csproj": {
+              "projectPath": "D:\\MidheimCombatHelper\\MidheimCombatHelperTest\\MidheimCombatHelper\\MidheimCombatHelper.csproj"
             }
           }
         }
