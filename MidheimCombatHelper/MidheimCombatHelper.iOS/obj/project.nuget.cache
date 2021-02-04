@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "MkkEtrirOkH4eVk3HV/8G2CGSdTpApFEEla+RxLinea0EOiRAzgOngizq6gKz3idLEAXo6KfM9r7JSSG1jyNVw==",
+  "success": true,
+  "projectFilePath": "D:\\MidheimCombatHelper\\MidheimCombatHelper\\MidheimCombatHelper.iOS\\MidheimCombatHelper.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\stoff\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\stoff\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
+    "C:\\Users\\stoff\\.nuget\\packages\\xamarin.forms\\5.0.0.1931\\xamarin.forms.5.0.0.1931.nupkg.sha512"
+  ],
+  "logs": []
+}
