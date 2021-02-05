@@ -27,3 +27,17 @@ D:\MidheimCombatHelperTest\MidheimCombatHelper\obj\Debug\netstandard2.0\MidheimC
 D:\MidheimCombatHelperTest\MidheimCombatHelper\obj\Debug\netstandard2.0\ref\MidheimCombatHelper.dll
 D:\MidheimCombatHelperTest\MidheimCombatHelper\obj\Debug\netstandard2.0\MidheimCombatHelper.pdb
 D:\MidheimCombatHelperTest\MidheimCombatHelper\obj\Debug\netstandard2.0\Page1.xaml.g.cs
+D:\MidheimCombatHelper\MidheimCombatHelper\MidheimCombatHelper\bin\Debug\netstandard2.0\MidheimCombatHelper.deps.json
+D:\MidheimCombatHelper\MidheimCombatHelper\MidheimCombatHelper\bin\Debug\netstandard2.0\MidheimCombatHelper.dll
+D:\MidheimCombatHelper\MidheimCombatHelper\MidheimCombatHelper\bin\Debug\netstandard2.0\ref\MidheimCombatHelper.dll
+D:\MidheimCombatHelper\MidheimCombatHelper\MidheimCombatHelper\bin\Debug\netstandard2.0\MidheimCombatHelper.pdb
+D:\MidheimCombatHelper\MidheimCombatHelper\MidheimCombatHelper\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\MidheimCombatHelper\MidheimCombatHelper\MidheimCombatHelper\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+D:\MidheimCombatHelper\MidheimCombatHelper\MidheimCombatHelper\obj\Debug\netstandard2.0\Page1.xaml.g.cs
+D:\MidheimCombatHelper\MidheimCombatHelper\MidheimCombatHelper\obj\Debug\netstandard2.0\MidheimCombatHelper.AssemblyInfoInputs.cache
+D:\MidheimCombatHelper\MidheimCombatHelper\MidheimCombatHelper\obj\Debug\netstandard2.0\MidheimCombatHelper.AssemblyInfo.cs
+D:\MidheimCombatHelper\MidheimCombatHelper\MidheimCombatHelper\obj\Debug\netstandard2.0\MidheimCombatHelper.csproj.CoreCompileInputs.cache
+D:\MidheimCombatHelper\MidheimCombatHelper\MidheimCombatHelper\obj\Debug\netstandard2.0\XamlC.stamp
+D:\MidheimCombatHelper\MidheimCombatHelper\MidheimCombatHelper\obj\Debug\netstandard2.0\MidheimCombatHelper.dll
+D:\MidheimCombatHelper\MidheimCombatHelper\MidheimCombatHelper\obj\Debug\netstandard2.0\ref\MidheimCombatHelper.dll
+D:\MidheimCombatHelper\MidheimCombatHelper\MidheimCombatHelper\obj\Debug\netstandard2.0\MidheimCombatHelper.pdb
