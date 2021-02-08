@@ -1,67 +1,103 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MidheimCombatHelper.MainPage">
-    <ScrollView>
+    <ScrollView VerticalOptions="FillAndExpand">
         <StackLayout BackgroundColor="#dbdbdb" >
             <Frame BackgroundColor="#614c4c" Padding="0" CornerRadius="0">
-                <Label Text="Velkommen til Midheim Kampassistent!" HorizontalTextAlignment="Center" VerticalTextAlignment="Start" TextColor="White" FontSize="23"/>
+                <Label Text="Velkommen til Midheim Kampassistent!" HorizontalTextAlignment="Center" VerticalTextAlignment="Start" TextColor="White" FontSize="Medium"/>
             </Frame>
-            <Label Text="Main hand" HorizontalOptions="Center" TextColor="Black" FontSize="16" Padding="0" Margin="0,12,0,0"></Label>
+            <!--Main hand grid-->
+
+            <Label Text="Main hand" HorizontalOptions="Center" TextColor="Black" FontSize="Large" FontAttributes="Bold"></Label>
+
             <Grid HorizontalOptions="Center" Padding="1">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="45"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="90"></ColumnDefinition>
-                    <ColumnDefinition Width="92"></ColumnDefinition>
-                    <ColumnDefinition Width="99"></ColumnDefinition>
-                    <ColumnDefinition Width="99"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <RadioButton Content="Næver" Grid.Column="0" FontSize="13" x:Name="næver" CheckedChanged="Næver_CheckedChanged"></RadioButton>
-                <RadioButton Content="Kortvåben" Grid.Column="1" FontSize="13" x:Name="kortVåben" CheckedChanged="KortVåben_CheckedChanged"></RadioButton>
-                <RadioButton Content="Håndvåben" Grid.Column="2" FontSize="13" x:Name="håndVåben" CheckedChanged="HåndVåben_CheckedChanged"></RadioButton>
-                <RadioButton Content="Tohåndede" Grid.Column="3" FontSize="13" x:Name="toHånd" CheckedChanged="ToHånd_CheckedChanged"></RadioButton>
+                <RadioButton Content="Kortvåb/Næver" Grid.Column="0" Grid.Row="0" FontSize="Default" x:Name="kortVåben" CheckedChanged="KortVåben_CheckedChanged" HorizontalOptions="Start"></RadioButton>
+                <RadioButton Content="Håndvåb" Grid.Column="1" Grid.Row="0" FontSize="Default" x:Name="håndVåben" CheckedChanged="HåndVåben_CheckedChanged" HorizontalOptions="Start"></RadioButton>
+                <RadioButton Content="Tohånd" Grid.Column="2" Grid.Row="0"  FontSize="Default" x:Name="toHånd" CheckedChanged="ToHånd_CheckedChanged" HorizontalOptions="EndAndExpand"></RadioButton>
             </Grid>
 
+            <!--Off hand grid-->
+            <Grid HorizontalOptions="Center" Padding="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Text="       Off hand" HorizontalOptions="Center" TextColor="Black" FontSize="Large" Grid.Row="0" Grid.Column="0" FontAttributes="Bold"></Label>
+                <Switch Grid.Row="0" Grid.Column="1" HorizontalOptions="End" Toggled="Switch_Toggled" x:Name="offHandToggle"></Switch>
+            </Grid>
+
+            <Grid HorizontalOptions="Center" Padding="1" x:Name="offHand" IsVisible="false">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <RadioButton Content="Kortvåb/Næver" Grid.Column="0" Grid.Row="0" FontSize="Default" x:Name="kortVåben_off" CheckedChanged="KortVåben_CheckedChanged" HorizontalOptions="Start"></RadioButton>
+                <RadioButton Content="Håndvåb/Medium skjold" Grid.Column="1" Grid.Row="0" FontSize="Default" x:Name="håndVåben_off" CheckedChanged="HåndVåben_CheckedChanged" HorizontalOptions="Start"></RadioButton>
+                <RadioButton Content="Lille skjold" Grid.Column="0" Grid.Row="1" FontSize="Default" x:Name="shieldXS" CheckedChanged="HåndVåben_CheckedChanged" HorizontalOptions="Start"></RadioButton>
+                <RadioButton Content="Stort skjold" Grid.Column="1" Grid.Row="1" FontSize="Default" x:Name="shieldXL" CheckedChanged="HåndVåben_CheckedChanged" HorizontalOptions="Start"></RadioButton>
+
+            </Grid>
             <Grid HorizontalOptions="Center" Margin="5,12,0,0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="20"></RowDefinition>
-                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
 
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"></ColumnDefinition>
-                    <ColumnDefinition Width="100"></ColumnDefinition>
-                    <ColumnDefinition Width="100"></ColumnDefinition>
-                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Label Text="Max Helbred" WidthRequest="30" Grid.Column="0" FontSize="14" Grid.Row="0" TextColor="Black" Margin="5,0,0,0" ></Label>
-                <Label Text="Max Energi" WidthRequest="30" Grid.Column="1" FontSize="14" Grid.Row="0" TextColor="Black" ></Label>
-                <Label Text="Max Tempo" WidthRequest="30" Grid.Column="2" FontSize="14" Grid.Row="0" TextColor="Black" ></Label>
-                <Label Text="Energi Regen" WidthRequest="30" Grid.Column="3" FontSize="14" Grid.Row="0" TextColor="Black" ></Label>
-                
-                <Entry Placeholder="Max Helbred:  " Keyboard="Numeric" x:Name="maxHelbred" TextChanged="MaxHelbred_TextChanged" MaxLength="3" WidthRequest="30" Grid.Column="0" FontSize="14" TextColor="Black" Grid.Row="1"></Entry>
-                <Entry Placeholder="Max Energi:  " Keyboard="Numeric" x:Name="maxEnergi" TextChanged="MaxEnergi_TextChanged" MaxLength="3"  WidthRequest="30" Grid.Column="1" FontSize="14" TextColor="Black" Grid.Row="1"></Entry>
-                <Entry Placeholder="Max Tempo:  " Keyboard="Numeric" x:Name="maxTempo"   TextChanged="MaxTempo_TextChanged" WidthRequest="30" Grid.Column="2" FontSize="14" TextColor="Black" Grid.Row="1"></Entry>
-                <Entry Placeholder="Energi Regen: " Keyboard="Numeric" x:Name="energiRegen" WidthRequest="30" Grid.Column="3" FontSize="14" TextColor="Black" Grid.Row="1" ></Entry>
+                <Label Text="Stats" Grid.Row="0" Grid.Column="1" FontSize="Large" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold"></Label>
+                <Label Text="Max Helbred"  Grid.Column="0" FontSize="Medium" Grid.Row="1" TextColor="Black" ></Label>
+                <Label Text="Max Energi"  Grid.Column="1" FontSize="Medium" Grid.Row="1" TextColor="Black" ></Label>
+                <Label Text="Max Tempo" Grid.Column="2" FontSize="Medium" Grid.Row="1" TextColor="Black" ></Label>
+                <Label Text="Max Fokus"  Grid.Column="0" FontSize="Medium" Grid.Row="3" TextColor="Black" ></Label>
+                <Label Text="Energi Regen"  Grid.Column="1" FontSize="Medium" Grid.Row="3" TextColor="Black" ></Label>
+
+                <Entry Placeholder="Max Helbred:  " Keyboard="Numeric" x:Name="maxHelbred" TextChanged="MaxHelbred_TextChanged" MaxLength="3"  Grid.Column="0" FontSize="Medium" TextColor="Black" Grid.Row="2"></Entry>
+                <Entry Placeholder="Max Energi:  " Keyboard="Numeric" x:Name="maxEnergi" TextChanged="MaxEnergi_TextChanged" MaxLength="3"  Grid.Column="1" FontSize="Medium" TextColor="Black" Grid.Row="2"></Entry>
+                <Entry Placeholder="Max Tempo:  " Keyboard="Numeric" x:Name="maxTempo"   TextChanged="MaxTempo_TextChanged"  Grid.Column="2" FontSize="Medium" TextColor="Black" Grid.Row="2"></Entry>
+                <Entry Placeholder="Max Fokus: " Keyboard="Numeric" x:Name="maxFokus" TextChanged="MaxFokus_TextChanged" Grid.Column="0" FontSize="Medium" TextColor="Black" Grid.Row="4" HorizontalOptions="Start" ></Entry>
+                <Entry Placeholder="Energi Regen: " Keyboard="Numeric" x:Name="energiRegen"  Grid.Column="1" FontSize="Medium" TextColor="Black" Grid.Row="4" ></Entry>
             </Grid>
 
             <!--Helbred text-->
             <Label Text="{Binding Source={x:Reference helbredSlider}, Path=Value, StringFormat='Helbred: {0:F0}'}" x:Name="mitHelbred" FontSize="Medium" HorizontalOptions="Center" TextColor="Black" Margin="0,2,0,0"></Label>
             <!--Helbreds Slider-->
             <Grid HorizontalOptions="Center">
-                <Grid.RowDefinitions >
-                    <RowDefinition Height="50"></RowDefinition>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="80"></ColumnDefinition>
-                    <ColumnDefinition Width="240"></ColumnDefinition>
-                    <ColumnDefinition Width="80"></ColumnDefinition>
+                    <ColumnDefinition Width=".3*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width=".3*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button Text="-1" Clicked="DecrementHelbred" WidthRequest="55" HeightRequest="40" VerticalOptions="Center" Grid.Column="0" HorizontalOptions="Start" BackgroundColor="#805555"></Button>
+                <Button Text="-1" Clicked="DecrementHelbred"  VerticalOptions="Center" Grid.Column="0" HorizontalOptions="Start" BackgroundColor="#805555"></Button>
                 <Slider Minimum="0" Maximum="100" Grid.Column="1" x:Name="helbredSlider" MinimumTrackColor="Green" MaximumTrackColor="DarkRed" ThumbColor="Black"></Slider>
-                <Button Text="+1" Clicked="IncrementHelbred" WidthRequest="55" Grid.Column="2" HorizontalOptions="End" HeightRequest="40" VerticalOptions="Center" BackgroundColor="#53784c"></Button>
+                <Button Text="+1" Clicked="IncrementHelbred"  Grid.Column="2" HorizontalOptions="End"  VerticalOptions="Center" BackgroundColor="#53784c"></Button>
             </Grid>
 
 
@@ -70,16 +106,16 @@
             <!--Energi Slider-->
             <Grid HorizontalOptions="Center">
                 <Grid.RowDefinitions >
-                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="80"></ColumnDefinition>
-                    <ColumnDefinition Width="240"></ColumnDefinition>
-                    <ColumnDefinition Width="80"></ColumnDefinition>
+                    <ColumnDefinition Width=".3*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width=".3*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button Text="-1" Clicked="DecrementEnergi" WidthRequest="55" Grid.Column="0" HorizontalOptions="Start" HeightRequest="40" VerticalOptions="Center" BackgroundColor="#805555"></Button>
+                <Button Text="-1" Clicked="DecrementEnergi"  Grid.Column="0" HorizontalOptions="Start"  VerticalOptions="Center" BackgroundColor="#805555"></Button>
                 <Slider Minimum="0" Maximum="100"  x:Name="energiSlider" Grid.Column="1" MinimumTrackColor="#fabc11" MaximumTrackColor="DarkRed" ThumbColor="Black" ></Slider>
-                <Button Text="+1" Clicked="IncrementEnergi" WidthRequest="55" Grid.Column="2" HorizontalOptions="End" HeightRequest="40" VerticalOptions="Center" BackgroundColor="#53784c"></Button>
+                <Button Text="+1" Clicked="IncrementEnergi"  Grid.Column="2" HorizontalOptions="End"  VerticalOptions="Center" BackgroundColor="#53784c"></Button>
             </Grid>
 
             <!--Tempo text-->
@@ -87,37 +123,96 @@
             <!--Tempo Slider-->
             <Grid HorizontalOptions="Center">
                 <Grid.RowDefinitions >
-                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="80"></ColumnDefinition>
-                    <ColumnDefinition Width="240"></ColumnDefinition>
-                    <ColumnDefinition Width="80"></ColumnDefinition>
+                    <ColumnDefinition Width=".3*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width=".3*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button Text="-1" Clicked="DecrementTempo" WidthRequest="55" Grid.Column="0" HorizontalOptions="Start" HeightRequest="40" VerticalOptions="Center" BackgroundColor="#805555"></Button>
+                <Button Text="-1" Clicked="DecrementTempo" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" BackgroundColor="#805555"></Button>
                 <Slider Minimum="0" Maximum="100"  Grid.Column="1" x:Name="tempoSlider"   MinimumTrackColor="Purple" MaximumTrackColor="DarkRed" ThumbColor="Black"></Slider>
-                <Button Text="+1" Clicked="IncrementTempo" WidthRequest="55" Grid.Column="2" HorizontalOptions="End"  HeightRequest="40" VerticalOptions="Center" BackgroundColor="#53784c"></Button>
+                <Button Text="+1" Clicked="IncrementTempo"  Grid.Column="2" HorizontalOptions="End"  VerticalOptions="Center" BackgroundColor="#53784c"></Button>
             </Grid>
+
+
+
+            <!--Fokus text-->
+            <Label Text="{Binding Source={x:Reference fokusSlider},Path=Value,StringFormat='Fokus: {0:F0}'}" x:Name="mitFokus" FontSize="Medium" HorizontalOptions="Center" TextColor="Black" ></Label>
+            <!--Fokus Slider-->
+            <Grid HorizontalOptions="Center">
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".3*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width=".3*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Text="-1" Clicked="DecrementFokus" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" BackgroundColor="#805555"></Button>
+                <Slider Minimum="0" Maximum="100"  Grid.Column="1" x:Name="fokusSlider"   MinimumTrackColor="#7469c9" MaximumTrackColor="DarkRed" ThumbColor="Black"></Slider>
+                <Button Text="+1" Clicked="IncrementFokus"  Grid.Column="2" HorizontalOptions="End"  VerticalOptions="Center" BackgroundColor="#53784c"></Button>
+            </Grid>
+
+
+            <Grid HorizontalOptions="Center">
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+                <Label Text="slå skiftevis med main/offhand våben" Grid.Row="0" Grid.Column="1" TextColor="Black"></Label>
+                <Switch x:Name="alternateAttacks" Grid.Row="1" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" ></Switch>
+            </Grid>
+
 
             <Grid HorizontalOptions="Center" Padding="10">
                 <Grid.RowDefinitions >
-                    <RowDefinition Height="70"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="75"></ColumnDefinition>
-                    <ColumnDefinition Width="75"></ColumnDefinition>
-                    <ColumnDefinition Width="75"></ColumnDefinition>
-                    <ColumnDefinition Width="75"></ColumnDefinition>
-                    <ColumnDefinition Width="75"></ColumnDefinition>
+                    <ColumnDefinition Width=".7*"></ColumnDefinition>
+                    <ColumnDefinition Width=".7*"></ColumnDefinition>
+
                 </Grid.ColumnDefinitions>
-                <Button Text="Atk" Clicked="Angreb" WidthRequest="45" Grid.Column="0" BackgroundColor="SlateGray" ></Button>
-                <Button Text="Styr Atk" Clicked="StyrketAngreb" WidthRequest="45" Grid.Column="1" HeightRequest="40" VerticalOptions="Center" BackgroundColor="#9c6464"></Button>
-                <Button Text="Disc Atk" Clicked="DiscAngreb" WidthRequest="45" Grid.Column="2" HeightRequest="40" VerticalOptions="Center" BackgroundColor="#9c8764"></Button>
-                <Button Text="Bras Atk" Clicked="BrasendeAngreb" WidthRequest="45" Grid.Column="3" HeightRequest="40" VerticalOptions="Center" BackgroundColor="#c4824f"></Button>
-                <Button Text="Desp Atk" Clicked="DesperatAngreb" WidthRequest="45" Grid.Column="4" HeightRequest="40" VerticalOptions="Center" BackgroundColor="#99425f"></Button>
+                <RadioButton Content="Main hand" FontSize="Medium" TextColor="Black" Grid.Row="0" Grid.Column="0" CheckedChanged="UseMain" x:Name="mainHandRadio" ></RadioButton>
+                <RadioButton Content="Off hand" FontSize="Medium" TextColor="Black" Grid.Row="0" Grid.Column="1" CheckedChanged="UseOffHand" x:Name="offHandRadio" IsVisible="false"></RadioButton>
+
+
             </Grid>
 
-            <Button Text="Ny runde" Clicked="NyRunde" VerticalOptions="End"  HeightRequest="50" WidthRequest="100"  BackgroundColor="SlateGray" HorizontalOptions="Center"></Button>
+            <!--Attack buttons-->
+            <Grid HorizontalOptions="Center" Padding="10">
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".7*"></ColumnDefinition>
+                    <ColumnDefinition Width=".7*"></ColumnDefinition>
+                    <ColumnDefinition Width=".7*"></ColumnDefinition>
+                    <ColumnDefinition Width=".7*"></ColumnDefinition>
+                    <ColumnDefinition Width=".7*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Text="Atk" Clicked="Angreb"  Grid.Column="0" BackgroundColor="SlateGray" VerticalOptions="Center" Grid.Row="0" FontSize="Small"></Button>
+                <Button Text="Styr" Clicked="StyrketAngreb"  Grid.Column="1"  VerticalOptions="Center" BackgroundColor="#9c6464" Grid.Row="0" FontSize="Small"></Button>
+                <Button Text="Disc" Clicked="DiscAngreb"  Grid.Column="2" VerticalOptions="Center" BackgroundColor="#9c8764" Grid.Row="0" FontSize="Small"></Button>
+                <Button Text="Bras" Clicked="BrasendeAngreb"  Grid.Column="3"  VerticalOptions="Center" BackgroundColor="#c4824f" Grid.Row="0" FontSize="Small"></Button>
+                <Button Text="Desp" Clicked="DesperatAngreb" Grid.Column="4" VerticalOptions="Center" BackgroundColor="#99425f" Grid.Row="0" FontSize="Small"></Button>
+            </Grid>
+
+            <Button Text="Ny runde" Clicked="NyRunde" VerticalOptions="FillAndExpand"  BackgroundColor="SlateGray" HorizontalOptions="Center"></Button>
+            <Label></Label>
+            <Label></Label>
+
+            <Label></Label>
+
         </StackLayout >
     </ScrollView>
 </ContentPage>

@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace MidheimCombatHelper
@@ -15,11 +10,20 @@ namespace MidheimCombatHelper
 
         public int mainHandEnergiCost;
         public int mainHandTempoCost;
+
+        Weapons mainHandWep;
+        Weapons offHandWep;
+
+        Weapons activeWep;
+
+
         public MainPage()
         {
             InitializeComponent();
 
+
         }
+
 
 
         private void NyRunde(object sender, EventArgs e)
@@ -31,6 +35,8 @@ namespace MidheimCombatHelper
             energiSlider.Value += int.Parse(energiRegen.Text);
             tempoSlider.Value = int.Parse(maxTempo.Text);
             attackCount = 0;
+     
+        
         }
 
         private void MaxEnergi_TextChanged(object sender, TextChangedEventArgs e)
@@ -59,18 +65,22 @@ namespace MidheimCombatHelper
             }
 
             tempoSlider.Maximum = int.Parse(maxTempo.Text);
-            tempoSlider.Value = int.Parse(maxEnergi.Text);
+            tempoSlider.Value = int.Parse(maxTempo.Text);
         }
 
 
 
         private void Angreb(object sender, EventArgs e)
         {
-            if (energiSlider.Value >= mainHandEnergiCost + attackCount && tempoSlider.Value >= mainHandTempoCost)
+            if (activeWep == null)
             {
-                energiSlider.Value -= mainHandEnergiCost + attackCount;
-                tempoSlider.Value -= mainHandTempoCost;
-                attackCount++;
+                activeWep = mainHandWep;
+            }
+            if (energiSlider.Value >= activeWep.GetEnergiCost() + attackCount && tempoSlider.Value >= activeWep.GetTempoCost())
+            {
+                energiSlider.Value -= activeWep.GetEnergiCost() + attackCount;
+                tempoSlider.Value -= activeWep.GetTempoCost();
+                AlternateAttack();
             }
             else
             {
@@ -80,11 +90,15 @@ namespace MidheimCombatHelper
 
         private void StyrketAngreb(object sender, EventArgs e)
         {
-            if (energiSlider.Value >= mainHandEnergiCost + attackCount + 1 && tempoSlider.Value >= mainHandTempoCost && energiSlider.Value >= 8)
+            if (activeWep == null)
             {
-                energiSlider.Value -= mainHandEnergiCost + attackCount + 1;
-                tempoSlider.Value -= mainHandTempoCost;
-                attackCount++;
+                activeWep = mainHandWep;
+            }
+            if (energiSlider.Value >= activeWep.GetEnergiCost() + attackCount + 1 && tempoSlider.Value >= activeWep.GetTempoCost() && energiSlider.Value >= 8)
+            {
+                energiSlider.Value -= activeWep.GetEnergiCost() + attackCount + 1;
+                tempoSlider.Value -= activeWep.GetTempoCost();
+                AlternateAttack();
             }
             else
             {
@@ -94,11 +108,15 @@ namespace MidheimCombatHelper
 
         private void DiscAngreb(object sender, EventArgs e)
         {
-            if (energiSlider.Value >= mainHandEnergiCost + attackCount && tempoSlider.Value >= mainHandTempoCost + 1)
+            if (activeWep == null)
             {
-                energiSlider.Value -= mainHandEnergiCost + attackCount;
-                tempoSlider.Value -= mainHandTempoCost + 1; ;
-                attackCount++;
+                activeWep = mainHandWep;
+            }
+            if (energiSlider.Value >= activeWep.GetEnergiCost() + attackCount && tempoSlider.Value >= activeWep.GetTempoCost() + 1 && fokusSlider.Value >= 1)
+            {
+                energiSlider.Value -= activeWep.GetEnergiCost() + attackCount;
+                tempoSlider.Value -= activeWep.GetTempoCost() + 1; ;
+                AlternateAttack();
             }
             else
             {
@@ -108,11 +126,15 @@ namespace MidheimCombatHelper
 
         private void BrasendeAngreb(object sender, EventArgs e)
         {
-            if (energiSlider.Value >= mainHandEnergiCost + attackCount + 1 && tempoSlider.Value >= mainHandTempoCost + 1)
+            if (activeWep == null)
             {
-                energiSlider.Value -= mainHandEnergiCost + attackCount + 1;
-                tempoSlider.Value -= mainHandTempoCost + 1;
-                attackCount++;
+                activeWep = mainHandWep;
+            }
+            if (energiSlider.Value >= activeWep.GetEnergiCost() + attackCount + 1 && tempoSlider.Value >= activeWep.GetTempoCost() + 1)
+            {
+                energiSlider.Value -= activeWep.GetEnergiCost() + attackCount + 1;
+                tempoSlider.Value -= activeWep.GetTempoCost() + 1;
+                AlternateAttack();
             }
             else
             {
@@ -122,16 +144,33 @@ namespace MidheimCombatHelper
 
         private void DesperatAngreb(object sender, EventArgs e)
         {
-            if (energiSlider.Value >= mainHandEnergiCost + attackCount && tempoSlider.Value >= mainHandTempoCost)
+            if (activeWep == null)
             {
-                energiSlider.Value -= mainHandEnergiCost + attackCount;
-                tempoSlider.Value -= mainHandTempoCost;
-                attackCount++;
+                activeWep = mainHandWep;
+            }
+            if (energiSlider.Value >= activeWep.GetEnergiCost() + attackCount && tempoSlider.Value >= activeWep.GetTempoCost())
+            {
+                energiSlider.Value -= activeWep.GetEnergiCost() + attackCount;
+                tempoSlider.Value -= activeWep.GetTempoCost();
+                fokusSlider.Value -= 1;
+                AlternateAttack();
             }
             else
             {
                 DisplayAlert("Ikke nok energi/tempo", "Du kan ikke angribe mere,bro", "OK, bro");
 
+            }
+        }
+
+        private void AlternateAttack()
+        {
+            if (mainHandRadio.IsChecked == true && offHandWep != null && alternateAttacks.IsToggled == true)
+            {
+                offHandRadio.IsChecked = true;
+            }
+            else
+            {
+                attackCount++;
             }
         }
 
@@ -171,28 +210,91 @@ namespace MidheimCombatHelper
             await Navigation.PushAsync(new Page1());
         }
 
-        private void Næver_CheckedChanged(object sender, CheckedChangedEventArgs e)
-        {
-            mainHandEnergiCost = 1;
-            mainHandTempoCost = 1;
-        }
 
         private void KortVåben_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
-            mainHandEnergiCost = 1;
-            mainHandTempoCost = 1;
+            if (sender == kortVåben)
+            {
+                mainHandWep = new Weapons(1, 1);
+
+            }
+            else
+            {
+                offHandWep = new Weapons(1, 1);
+            }
+
         }
 
         private void HåndVåben_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
-            mainHandEnergiCost = 2;
-            mainHandTempoCost = 2;
+            if (sender == håndVåben)
+            {
+                mainHandWep = new Weapons(2, 2);
+            }
+            else
+            {
+                offHandWep = new Weapons(2, 2);
+            }
         }
 
         private void ToHånd_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
-            mainHandEnergiCost = 3;
-            mainHandTempoCost = 3;
+            mainHandWep = new Weapons(3, 3);
+            offHandToggle.IsToggled = false;
+            //offHand.IsVisible = false;
+            offHandRadio.IsVisible = false;
+            offHandWep = null;
+
+        }
+
+        private void DecrementFokus(object sender, EventArgs e)
+        {
+            fokusSlider.Value -= 1;
+        }
+
+        private void IncrementFokus(object sender, EventArgs e)
+        {
+            fokusSlider.Value += 1;
+
+        }
+
+        private void MaxFokus_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            fokusSlider.Maximum = int.Parse(maxFokus.Text);
+            fokusSlider.Value = int.Parse(maxFokus.Text);
+        }
+
+        private void Switch_Toggled(object sender, ToggledEventArgs e)
+        {
+            if (offHand.IsVisible == true)
+            {
+                offHand.IsVisible = false;
+                offHandRadio.IsVisible = false;
+                offHandWep = null;
+
+            }
+            else
+            {
+                offHand.IsVisible = true;
+                offHandRadio.IsVisible = true;
+
+            }
+
+        }
+
+        private void UseMain(object sender, CheckedChangedEventArgs e)
+        {
+            activeWep = mainHandWep;
+        }
+
+        private void UseOffHand(object sender, CheckedChangedEventArgs e)
+        {
+            activeWep = offHandWep;
+        }
+
+        private void mainHandToggle_Toggled(object sender, ToggledEventArgs e)
+        {
+
         }
     }
 }

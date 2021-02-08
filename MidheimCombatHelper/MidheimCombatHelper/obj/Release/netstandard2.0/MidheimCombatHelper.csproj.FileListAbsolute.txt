@@ -41,3 +41,8 @@ D:\MidheimCombatHelper\MidheimCombatHelper\MidheimCombatHelper\obj\Release\netst
 D:\MidheimCombatHelper\MidheimCombatHelper\MidheimCombatHelper\obj\Release\netstandard2.0\MidheimCombatHelper.dll
 D:\MidheimCombatHelper\MidheimCombatHelper\MidheimCombatHelper\obj\Release\netstandard2.0\ref\MidheimCombatHelper.dll
 D:\MidheimCombatHelper\MidheimCombatHelper\MidheimCombatHelper\obj\Release\netstandard2.0\MidheimCombatHelper.pdb
+D:\MidheimCombatHelper\MidheimCombatHelper\MidheimCombatHelper\bin\Release\netstandard2.0\Mono.Android.dll
+D:\MidheimCombatHelper\MidheimCombatHelper\MidheimCombatHelper\bin\Release\netstandard2.0\Mono.Android.pdb
+D:\MidheimCombatHelper\MidheimCombatHelper\MidheimCombatHelper\bin\Release\netstandard2.0\Mono.Android.xml
+D:\MidheimCombatHelper\MidheimCombatHelper\MidheimCombatHelper\obj\Release\netstandard2.0\MidheimCombatHelper.csprojAssemblyReference.cache
+D:\MidheimCombatHelper\MidheimCombatHelper\MidheimCombatHelper\obj\Release\netstandard2.0\MidheimCombatHelper.csproj.CopyComplete

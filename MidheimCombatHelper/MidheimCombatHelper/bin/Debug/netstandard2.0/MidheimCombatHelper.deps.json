@@ -11,7 +11,8 @@
         "dependencies": {
           "NETStandard.Library": "2.0.3",
           "Xamarin.Essentials": "1.6.1",
-          "Xamarin.Forms": "5.0.0.1931"
+          "Xamarin.Forms": "5.0.0.1931",
+          "Mono.Android": "0.0.0.0"
         },
         "runtime": {
           "MidheimCombatHelper.dll": {}
@@ -57,6 +58,14 @@
             "fileVersion": "5.0.0.616"
           }
         }
+      },
+      "Mono.Android/0.0.0.0": {
+        "runtime": {
+          "Mono.Android.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
       }
     }
   },
@@ -100,6 +109,11 @@
       "sha512": "sha512-5xe9Oxtx2lHC0pinXGRLoUMEav3qxdtNemDF1UxCcxHcwv/Zcso2LhYw1LnemYhtESa6QGOD8dGM31A2pmteVg==",
       "path": "xamarin.forms/5.0.0.1931",
       "hashPath": "xamarin.forms.5.0.0.1931.nupkg.sha512"
+    },
+    "Mono.Android/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
