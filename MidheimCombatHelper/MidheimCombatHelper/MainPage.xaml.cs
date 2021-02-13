@@ -35,8 +35,9 @@ namespace MidheimCombatHelper
             energiSlider.Value += int.Parse(energiRegen.Text);
             tempoSlider.Value = int.Parse(maxTempo.Text);
             attackCount = 0;
-     
-        
+            mainHandRadio.IsChecked = true;
+
+
         }
 
         private void MaxEnergi_TextChanged(object sender, TextChangedEventArgs e)
@@ -164,9 +165,18 @@ namespace MidheimCombatHelper
 
         private void AlternateAttack()
         {
-            if (mainHandRadio.IsChecked == true && offHandWep != null && alternateAttacks.IsToggled == true)
+            if (offHandWep != null && alternateAttacks.IsToggled == true)
             {
-                offHandRadio.IsChecked = true;
+                if (mainHandRadio.IsChecked)
+                {
+                    offHandRadio.IsChecked = true;
+                    return;
+                }
+                if (offHandRadio.IsChecked)
+                {
+                    mainHandRadio.IsChecked = true;
+                    return;
+                }
             }
             else
             {
