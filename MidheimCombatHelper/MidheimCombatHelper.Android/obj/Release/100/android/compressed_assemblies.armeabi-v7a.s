@@ -55,7 +55,7 @@
 
 	/* 3: MidheimCombatHelper.dll */
 	/* uncompressed_file_size */
-	.long	32256
+	.long	47616
 	/* loaded */
 	.byte	0
 	/* data */

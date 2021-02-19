@@ -61,9 +61,11 @@
                     <RowDefinition Height="auto"></RowDefinition>
                     <RowDefinition Height="auto"></RowDefinition>
                     <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
 
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
                     <ColumnDefinition Width="auto"></ColumnDefinition>
                     <ColumnDefinition Width="auto"></ColumnDefinition>
                     <ColumnDefinition Width="auto"></ColumnDefinition>
@@ -74,13 +76,17 @@
                 <Label Text="Max Energi"  Grid.Column="1" FontSize="Medium" Grid.Row="1" TextColor="Black" ></Label>
                 <Label Text="Max Tempo" Grid.Column="2" FontSize="Medium" Grid.Row="1" TextColor="Black" ></Label>
                 <Label Text="Max Fokus"  Grid.Column="0" FontSize="Medium" Grid.Row="3" TextColor="Black" ></Label>
-                <Label Text="Energi Regen"  Grid.Column="1" FontSize="Medium" Grid.Row="3" TextColor="Black" ></Label>
+                <Label Text="Max Mana"  Grid.Column="1" FontSize="Medium" Grid.Row="3" TextColor="Black" ></Label>
+
+                <Label Text="Energi Regen"  Grid.Column="2" FontSize="Medium" Grid.Row="3" TextColor="Black" ></Label>
 
                 <Entry Placeholder="Max Helbred:  " Keyboard="Numeric" x:Name="maxHelbred" TextChanged="MaxHelbred_TextChanged" MaxLength="3"  Grid.Column="0" FontSize="Medium" TextColor="Black" Grid.Row="2"></Entry>
                 <Entry Placeholder="Max Energi:  " Keyboard="Numeric" x:Name="maxEnergi" TextChanged="MaxEnergi_TextChanged" MaxLength="3"  Grid.Column="1" FontSize="Medium" TextColor="Black" Grid.Row="2"></Entry>
                 <Entry Placeholder="Max Tempo:  " Keyboard="Numeric" x:Name="maxTempo"   TextChanged="MaxTempo_TextChanged"  Grid.Column="2" FontSize="Medium" TextColor="Black" Grid.Row="2"></Entry>
                 <Entry Placeholder="Max Fokus: " Keyboard="Numeric" x:Name="maxFokus" TextChanged="MaxFokus_TextChanged" Grid.Column="0" FontSize="Medium" TextColor="Black" Grid.Row="4" HorizontalOptions="Start" ></Entry>
-                <Entry Placeholder="Energi Regen: " Keyboard="Numeric" x:Name="energiRegen"  Grid.Column="1" FontSize="Medium" TextColor="Black" Grid.Row="4" ></Entry>
+                <Entry Placeholder="Max Mana: " Keyboard="Numeric" x:Name="maxMana" TextChanged="MaxMana_TextChanged" Grid.Column="1" FontSize="Medium" TextColor="Black" Grid.Row="4" HorizontalOptions="Start" ></Entry>
+
+                <Entry Placeholder="Energi Regen: " Keyboard="Numeric" x:Name="energiRegen"  Grid.Column="2" FontSize="Medium" TextColor="Black" Grid.Row="4" ></Entry>
             </Grid>
 
             <!--Helbred text-->
@@ -117,7 +123,23 @@
                 <Slider Minimum="0" Maximum="100"  x:Name="energiSlider" Grid.Column="1" MinimumTrackColor="#fabc11" MaximumTrackColor="DarkRed" ThumbColor="Black" ></Slider>
                 <Button Text="+1" Clicked="IncrementEnergi"  Grid.Column="2" HorizontalOptions="End"  VerticalOptions="Center" BackgroundColor="#53784c"></Button>
             </Grid>
-
+            
+            <!--Mana text-->
+            <Label Text="{Binding Source={x:Reference manaSlider},Path=Value,StringFormat='Mana: {0:F0}'}" x:Name="minMana" FontSize="Medium" HorizontalOptions="Center" TextColor="Black"></Label>
+            <!--Mana Slider-->
+            <Grid HorizontalOptions="Center">
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".3*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width=".3*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Text="-1" Clicked="DecrementMana"  Grid.Column="0" HorizontalOptions="Start"  VerticalOptions="Center" BackgroundColor="#805555"></Button>
+                <Slider Minimum="0" Maximum="100"  x:Name="manaSlider" Grid.Column="1" MinimumTrackColor="DarkBlue" MaximumTrackColor="Gray" ThumbColor="Black" ></Slider>
+                <Button Text="+1" Clicked="IncrementMana"  Grid.Column="2" HorizontalOptions="End"  VerticalOptions="Center" BackgroundColor="#53784c"></Button>
+            </Grid>
             <!--Tempo text-->
             <Label Text="{Binding Source={x:Reference tempoSlider},Path=Value,StringFormat='Tempo: {0:F0}'}" x:Name="mitTempo" FontSize="Medium" HorizontalOptions="Center" TextColor="Black" ></Label>
             <!--Tempo Slider-->

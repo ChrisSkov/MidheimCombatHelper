@@ -37,14 +37,14 @@
 	.section	.rodata.map_aname.6,"aMS",%progbits,1
 	.type	.L.map_aname.6, %object
 .L.map_aname.6:
-	.asciz	"MidheimCombatHelper.Android"
-	.size	.L.map_aname.6, 28
+	.asciz	"Xamarin.AndroidX.AppCompat"
+	.size	.L.map_aname.6, 27
 
 	.section	.rodata.map_aname.7,"aMS",%progbits,1
 	.type	.L.map_aname.7, %object
 .L.map_aname.7:
-	.asciz	"Xamarin.AndroidX.AppCompat"
-	.size	.L.map_aname.7, 27
+	.asciz	"MidheimCombatHelper.Android"
+	.size	.L.map_aname.7, 28
 
 	.section	.rodata.map_aname.8,"aMS",%progbits,1
 	.type	.L.map_aname.8, %object

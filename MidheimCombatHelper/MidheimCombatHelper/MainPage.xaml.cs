@@ -302,9 +302,25 @@ namespace MidheimCombatHelper
             activeWep = offHandWep;
         }
 
-        private void mainHandToggle_Toggled(object sender, ToggledEventArgs e)
+        private void MainHandToggle_Toggled(object sender, ToggledEventArgs e)
         {
 
+        }
+
+        private void MaxMana_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            manaSlider.Maximum = int.Parse(maxMana.Text);
+            manaSlider.Value = int.Parse(maxMana.Text);
+        }
+
+        private void DecrementMana(object sender, EventArgs e)
+        {
+            manaSlider.Value -= 1;
+        }
+
+        private void IncrementMana(object sender, EventArgs e)
+        {
+            manaSlider.Value += 1;
         }
     }
 }
